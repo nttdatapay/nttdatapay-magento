@@ -35,7 +35,9 @@ Try clearing your Magento Cache from your admin panel if you experience any issu
 For Apache, you can follow below 
  - Go to apache -> conf -> httpd.conf file and enter below line:
  
+    ```
      Header edit Set-Cookie ^(.*)$ "$1; Secure; SameSite=None"
+    ```
 	
  - Save file and restart Apache. If it is not working then you may need to restart your system/server.
  - You can check your cookies section with the steps below:
