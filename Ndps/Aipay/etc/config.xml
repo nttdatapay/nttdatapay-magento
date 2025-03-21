@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <ndps>
+                <model>Ndps\Aipay\Model\PaymentMethod</model>
+                <title>Ndps</title>
+                <active>0</active>
+                <prod_url>https://payment1.atomtech.in/ots/aipay/auth</prod_url>
+                <test_url>https://caller.atomtech.in/ots/aipay/auth</test_url>
+                <payment_action>authorize</payment_action>
+                <app_id backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <secret_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <return_url>ndps/standard/response</return_url>
+                <notify_url>ndps/standard/notify</notify_url>
+                <order_status>processing</order_status>
+            </ndps>
+        </payment>
+    </default>
+</config>
