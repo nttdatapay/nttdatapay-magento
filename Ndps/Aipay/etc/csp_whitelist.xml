@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<csp_whitelist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd">
+    <policies>
+        <policy id="script-src">
+            <values>
+                <value id="ndps_uat_checkout" type="host">pgtest.atomtech.in</value>
+                <value id="ndps_prod_checkout" type="host">psa.atomtech.in</value>
+            </values>
+        </policy>
+        <policy id="frame-src">
+            <values>
+                <value id="ndps_uat_frame" type="host">pgtest.atomtech.in</value>
+                <value id="ndps_prod_frame" type="host">psa.atomtech.in</value>
+            </values>
+        </policy>
+        <policy id="connect-src">
+            <values>
+                <value id="ndps_uat_connect" type="host">caller.atomtech.in</value>
+                <value id="ndps_prod_connect" type="host">payment1.atomtech.in</value>
+            </values>
+        </policy>
+        <policy id="img-src">
+            <values>
+                <value id="ndps_uat_logo" type="host">pgtest.atomtech.in</value>
+            </values>
+            <values>
+                <value id="ndps_prod_logo" type="host">psa.atomtech.in</value>
+            </values>
+        </policy>
+    </policies>
+</csp_whitelist>

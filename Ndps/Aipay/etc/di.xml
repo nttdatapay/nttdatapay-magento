@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2016 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magento\Sales\Model\Order\Email\Container\OrderIdentity">
+        <plugin name="change_is_enable_method" type="Ndps\Aipay\Plugin\Sales\Order\Email\Container\OrderIdentityPlugin" sortOrder="30" />
+    </type>
+    <type name="Magento\Framework\App\Request\CsrfValidator">
+        <plugin name="csrf_validator_skip" type="Ndps\Aipay\Plugin\CsrfValidatorSkip" />
+    </type>
+
+    <virtualType name="NdpsLogger" type="Magento\Framework\Logger\Monolog">
+	    <arguments>
+	        <argument name="handlers" xsi:type="array">
+	            <item name="error" xsi:type="object">Ndps\Aipay\Logger\Handler</item>
+	        </argument>
+	    </arguments>
+	</virtualType>
+
+	 <type name="Ndps\Aipay\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">Ndps-LOG</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Ndps\Aipay\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+
+	<type name="Magento\Framework\Stdlib\Cookie\CookieMetadata">
+        <arguments>
+              <argument name="sameSite" xsi:type="string">None</argument>
+        </arguments>
+    </type>
+</config>

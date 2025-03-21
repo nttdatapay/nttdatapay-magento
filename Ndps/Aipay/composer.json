@@ -1,0 +1,30 @@
+{
+    "name": "ndps/aipay-magento",
+    "description": "payment gateway extension for magento by NDPS India",
+    "require": {
+        "php": "7.*|^8.2"
+    },
+    "keywords": [
+      "NDPS", "magento", "payments", "india",
+      "payment gateway", "wallets", "netbanking"
+    ],
+    "suggest": {
+      "magento/module-checkout-agreements": "100.0.*"
+    },
+    "homepage": "https://nttdatapay.com",
+    "support": {
+      "email": "NDPS.helpdesk@nttdata.com",
+      "docs": "https://www.nttdatapay.com/Integration-Guides"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "Ndps\\Aipay\\": ""
+        }
+    }
+}

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="ndps" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label><![CDATA[Ndps&nbsp;&nbsp;<i>Online payment platform with Cards, Net banking and other options</i>]]></label>
+                <field id="active" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable Ndps</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="61" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Title</label>
+                </field>
+                <field id="ndps_merchId" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Merchant Id</label>
+                    <comment>Provided by NDPS (317157 for Test)</comment>
+                </field>
+                <field id="ndps_txn_password" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Transaction Password</label>
+                    <comment>Provided by NDPS (Test@123 for Test)</comment>
+                </field>
+                <field id="ndps_product_id" translate="label" type="text" sortOrder="63" showInDefault="1" showInWebsite="1"  showInStore="1">
+                    <label>Product Id</label>
+                     <comment>Provided by NDPS (NSE for Test)</comment>
+                </field>
+                <field id="ndps_encryption_key" translate="label" type="text" sortOrder="64" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Encryption Key</label>
+                    <comment>Provided by NDPS (A4476C2062FFA58980DC8F79EB6A799E for Test)</comment>
+                </field>
+                <field id="ndps_decryption_key" translate="label" type="text" sortOrder="65" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Decryption Key</label>
+                     <comment>Provided by NDPS (75AEF0FA1B94B3C10D4F5B268F757F11 for Test)</comment>
+                </field>
+                <field id="environment" translate="label" type="select" sortOrder="67" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Environment</label>
+                    <source_model>Ndps\Aipay\Model\Environment</source_model>
+                    <config_path>payment/ndps/environment</config_path>
+                </field>
+                <field id="order_status" translate="label" type="select" sortOrder="68" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>New Order Status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status\NewStatus</source_model>
+                    <config_path>payment/ndps/order_status</config_path>
+                </field>
+                <field id="allowspecific" translate="label" type="allowspecific" sortOrder="69" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Applicable Countries</label>
+                    <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
+                    <config_path>payment/ndps/allowspecific</config_path>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Payment from Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                    <config_path>payment/ndps/specificcountry</config_path>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="71" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                    <config_path>payment/ndps/sort_order</config_path>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
